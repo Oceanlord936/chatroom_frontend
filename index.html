@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Chatroom</title>
+    </head>
+    <body>
+        <h1>Chatroom</h1>
+
+        <!-- login section — visible first -->
+        <div id="login-section">
+            <h2>Login</h2>
+            <input id="login-username" placeholder="username" />
+            <input id="login-password" type="password" placeholder="password" />
+            <button id="login-button">Login</button>
+            <p id="login-error" style="color:red;"></p>
+            <p>Don't have an account? <a href="#" id="go-signup">Sign up</a></p>
+        </div>
+
+        <!-- signup section — hidden first -->
+        <div id="signup-section" style="display:none;">
+            <h2>Sign Up</h2>
+            <input id="signup-username" placeholder="username" />
+            <input id="signup-password" type="password" placeholder="password" />
+            <button id="signup-button">Sign Up</button>
+            <p id="signup-message" style="color:red;"></p>
+            <p>Already have an account? <a href="#" id="go-login">Login</a></p>
+        </div>
+
+        <!-- chat section — hidden until login -->
+        <div id="chat-section" style="display:none;">
+            <h1>Chatroom</h1>
+            <div id="chat-box" style="border:1px solid black; height:300px; width:400px; overflow-y:scroll;"></div>
+            <input id="message-input" type="text" placeholder="Type a message..." />
+            <button id="send-button">Send</button>
+        </div>
+
+        <script src="app.js"></script>
+    </body>
+</html>
