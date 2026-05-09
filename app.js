@@ -10,7 +10,6 @@ let chatBox = document.getElementById("chat-box");
 let loadMessages = function() {
     fetch(BACKEND + "/messages", {
         method: "GET",
-        credentials: "include",
         headers: {
             "ngrok-skip-browser-warning": "true"
         }
@@ -70,7 +69,6 @@ signUpButton.onclick = function() {
             "Content-Type": "application/json",
             "ngrok-skip-browser-warning": "true"
         },
-        credentials: "include",
         body: JSON.stringify({ username: signUpUsername.value, password: signUpPass.value })
     })
     .then(function(response) {
@@ -98,7 +96,6 @@ loginButton.onclick = function() {
             "Content-Type": "application/json",
             "ngrok-skip-browser-warning": "true"
         },
-        credentials: "include",
         body: JSON.stringify({ username: usernameInput.value, password: passInput.value })
     })
     .then(function(response) {
