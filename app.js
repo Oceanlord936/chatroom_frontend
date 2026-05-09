@@ -10,7 +10,10 @@ let chatBox = document.getElementById("chat-box");
 let loadMessages = function() {
     fetch(BACKEND + "/messages", {
         method: "GET",
-        credentials: "include"
+        credentials: "include",
+        headers: {
+            "ngrok-skip-browser-warning": "true"
+        }
     })
     .then(function(response) {
         return response.json();
@@ -63,7 +66,10 @@ let signUpError = document.getElementById("signup-message");
 signUpButton.onclick = function() {
     fetch(BACKEND + "/signup", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
+        headers: {
+            "Content-Type": "application/json",
+            "ngrok-skip-browser-warning": "true"
+        },
         credentials: "include",
         body: JSON.stringify({ username: signUpUsername.value, password: signUpPass.value })
     })
@@ -88,7 +94,10 @@ let loginError = document.getElementById("login-error");
 loginButton.onclick = function() {
     fetch(BACKEND + "/login", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
+        headers: {
+            "Content-Type": "application/json",
+            "ngrok-skip-browser-warning": "true"
+        },
         credentials: "include",
         body: JSON.stringify({ username: usernameInput.value, password: passInput.value })
     })
